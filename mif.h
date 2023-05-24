@@ -1,3 +1,19 @@
+// IsoMIF is a program to identify molecular interaction field similarities between proteins
+// Copyright (C) 2015 - Matthieu Chartier (under the supervision or Rafael Najmanovich)
+
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -79,7 +95,6 @@ struct pbVrtx{
 struct pwRun{
   string pdbF;
   string cleftF;
-  string gridF;
   string rnc;
   string ligF;
 };
@@ -96,17 +111,19 @@ string tag="";
 string chain="";
 string basePath="";
 string resnumc="";
+string resnumcShort="";
 string matrixF="";
 string probesF="";
 string ligFile="";
 string ff="original";
 string statsF="original";
 float distpbV=2.0;
+float gridStep=0.5;
 float stepsize=0.5;
 float maxGridDist=4.0;
 float minGridDist=2.5;
 float atmPbMaxDist=8.0;
-float gridLigDist=2.0;
+float gridLigDist=3.0;
 float caT=5.0;
 int uID=0;
 int smoothDist=0;
@@ -119,9 +136,12 @@ int nbOfAts=0;
 int nbOfAtoms=0;
 int nbOfProbes=0;
 int ss[4];
+int ssm[4];
 int zip=-1;
-int bul=0;
+int bul=14;
 int buD=40;
+int surf=0;
+
 float* epsilons;
 float angThresh=60.0;
 map<string,string> atomTypes;
@@ -167,13 +187,8 @@ class  Grid{
     ~Grid(void);
     int readGetCleft(string, vector<atom>&, vector<float>&);
     int generateID(int, int, int, int, int);
-    int buildGrid(vector<atom>&);
-    void getProtVrtx(vector<atom>&);
-    void createProtVrtx(vector<atom>&);
-    void getMinMax(string);
+    int buildGrid(Protein&);
     void getBuriedness();
-    void writeGrid();
-    int readGrid();
     int getDiag(int, int, int, int&);
     int inGridRes(vertex&, float);
     void smooth();
