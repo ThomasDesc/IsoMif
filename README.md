@@ -51,6 +51,7 @@ You can calculate clefts of 1RDQ  with ATP 600 E alt. B:
 Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond) donors and correct the placement of terminal O/N atoms for asparagine and glutamine as well as C/N for histidine as these residues can often be erroneously modeled during refinement. Use the reduce program (https://github.com/rlabduke/reduce)
 
 ./reduce -p ./hive/pdb/1E8X.pdb > ./hive/pdb/1E8Xh.pdb
+
 ./reduce -p ./hive/pdb/1RDQ.pdb > ./hive/pdb/1RDQh.pdb
 
 ###################################################################
@@ -81,6 +82,7 @@ With the command above the mif will be calculated at the 1.5 Angstrom grid resol
 This will create a .pml file that you can open with PyMol. It will show the grids at the specified resolution (if any). It will also show colored spheres that represent position of potential interactions found below the threshold. The colors are probe specific, see below.
 
 perl ./mifView.pl -m ./hive/mifs/1E8X.mif -o ./hive/mifView/
+
 perl ./mifView.pl -m ./hive/mifs/1RDQ.mif -o ./hive/mifView/
 
 hydrophobic - cyan
