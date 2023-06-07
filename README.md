@@ -42,7 +42,7 @@ These files are used as input in mif to define where the MIF interaction vectors
 
 You can calculate clefts of 1RDQ  with ATP 600 E alt. B:
 
-./getCleft -p ./hive/pdb/1RDQ.pdb -o ./hive/clefts/1RDQ -s -a ATP600EB-
+./getCleft -p ./hive/pdb/1RDQ.pdb -o ./hive/clefts/1RDQ -s -a ATP600EB
 
 ##############################
 2. Add Hydrogens to Input PDBs
@@ -62,7 +62,7 @@ Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X
 
 ./mif -p ./hive/pdb/1E8Xh.pdb -g ./hive/clefts/1E8X_ATP3000A-_sph_1.pdb -o ./hive/mifs/ -s 1 -l ATP3000A- -t 1E8X
 
-./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB-_sph_2.pdb -o ./hive/mifs/ -s 1 -l ATP600E- -t 1RDQ
+./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ -s 1 -l ATP600EB -t 1RDQ
 
 To calculate the grid only for a specific grid resolution, add argument -z followed the resolution code:
 
