@@ -66,20 +66,9 @@ Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond
 
 Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X_ATP3000A-_sph_1.pdb). Argument -l allows you to constrain the grid around a ligand or residue up to a distance (in Angstrom) specified with -r. Argument -t is the prefix of the output file name.
 
-./mif -p ./hive/pdb/1E8Xh.pdb -g ./hive/clefts/1E8X_ATP3000A-_sph_1.pdb -o ./hive/mifs/ -s 1 -l ATP3000A- -t 1E8X_m
+./mif -p ./hive/pdb/1E8Xh.pdb -g ./hive/clefts/1E8X_ATP3000A-_sph_1.pdb -o ./hive/mifs/ -s 1 -l ATP3000A- -t 1E8X
 
-./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ -s 1 -l ATP600EB -t 1RDQ_m
-
-To calculate the grid only for a specific grid resolution, add argument -z followed the resolution code:
-
-./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ z 1
-
-With the command above the mif will be calculated at the 1.5 Angstrom grid resolution. See table below for the values that z can take.
-
-0 - 2 Angstroms
-1 - 1.5 Angstroms
-2 - 1.0 Angstroms
-3 - 0.5 Angstroms
+./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ -s 1 -l ATP600EB -t 1RDQ
 
 #################################################
 4. Generate the PyMol script to visualize the MIF
@@ -106,7 +95,7 @@ Give the two input MIF files as input with -p1 and -p2 and the output file with 
 
 The example below will search mif similarities between the two query MIFs in the 1.5 Angstrom resolution grid:
 
-./isoMif -p1 ./hive/mifs/1E8X.mif -p2 ./hive/mifs/1RDQ.mif -o ./hive/match/ -c 2 -l1 -l1 ATP3000A- -l2 ATP600EB
+./isomif -p1 ./hive/mifs/1E8X.mif -p2 ./hive/mifs/1RDQ.mif -o ./hive/match/ -c 2 -l1 -l1 ATP3000A- -l2 ATP600EB
 
 You can also superimpose the MIFs using a list of corresponding atoms ids with the argument -c set to -2. To superimpose the MIFs based on the ATP molecules of 1E8X and 1RDQ, use argument -q to provide two lists (seperated by ' ') of corresponding ATP atoms ids (sep. by ','): -q 6833,6834,6836,6830,6828,6822,6826,6819,6824,6811 2964,2965,2967,2961,2959,2953,2957,2950,2955,2942.
 
