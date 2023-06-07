@@ -29,6 +29,10 @@ Then follow the instructions below:
 1. Find Cavities
 ################
 
+To download the PDB for the example you may use the following links:
+https://files.rcsb.org/download/1RDQ.pdb
+https://files.rcsb.org/download/5OEI.pdb
+
 To find the top biggest 5 cavities of 1E8X.pdb:
 
 ./getCleft -p ./hive/pdb/1E8X.pdb -o ./hive/clefts/1E8X -s -t 5
