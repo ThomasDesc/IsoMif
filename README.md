@@ -100,7 +100,7 @@ Give the two input MIF files as input with -p1 and -p2 and the output file with 
 
 The example below will search mif similarities between the two query MIFs in the 1.5 Angstrom resolution grid:
 
-./isoMif -p1 ./hive/mifs/1E8X.mif -p2 ./hive/mifs/1RDQ.mif -o ./hive/match/ -c 1 -d 2.0
+./isoMif -p1 ./hive/mifs/1E8X.mif -p2 ./hive/mifs/1RDQ.mif -o ./hive/match/ -c 2 -l1 -l1 ATP3000A- -l2 ATP600EB
 
 You can also superimpose the MIFs using a list of corresponding atoms ids with the argument -c set to -2. To superimpose the MIFs based on the ATP molecules of 1E8X and 1RDQ, use argument -q to provide two lists (seperated by ' ') of corresponding ATP atoms ids (sep. by ','): -q 6833,6834,6836,6830,6828,6822,6826,6819,6824,6811 2964,2965,2967,2961,2959,2953,2957,2950,2955,2942.
 
@@ -122,6 +122,6 @@ The RMSD of a residue or bound molecule after the superimposition of the MIF sim
 6. Generate PyMol script to visualize the matched and unmatched MIFs
 ####################################################################
 
-perl ./isoMifView.pl -m ./hive/match/1E8X_match_1RDQ.isomif -o ./hive/matchView/ -g 1
+perl ./isoMifView.pl -m ./hive/match/1E8X_match_1RDQ.isomif -o ./hive/matchView/ -g 2
 
 Argument -g defines the grid resolution of the matched nodes to view. It corresponds to argument -c of isoMif. In this PyMol file, for a given probe, to distinguish if it represents the Mif of the first or of the second protein, we use two sphere sizes. The big spheres represent the first protein (here 1E8X, in green), the small spheres the second protein (1RDQ, in cyan). Semi-transparent spheres represent the initial Mif calculated in the cavity and opaque spheres represent the subset that was found similar. In the case of 1E8X and 1RDQ there are only a few semi-transparent spheres as the two proteins are highly similar.
