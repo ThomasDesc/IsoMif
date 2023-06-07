@@ -42,7 +42,7 @@ These files are used as input in mif to define where the MIF interaction vectors
 
 You can calculate clefts of 1RDQ  with ATP 600 E alt. B:
 
-./getCleft -p ./hive/pdb/1RDQ.pdb -o ./hive/clefts/1RDQ -s -a ATP600EB
+./getCleft -p ./hive/pdb/1RDQ.pdb -o ./hive/clefts/1RDQ -s -a ATP600EB-
 
 ##############################
 2. Add Hydrogens to Input PDBs
@@ -60,9 +60,9 @@ Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond
 
 Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X_ATP3000A-_sph_1.pdb). Argument -l allows you to constrain the grid around a ligand or residue up to a distance (in Angstrom) specified with -r. Argument -t is the prefix of the output file name.
 
-./mif -p ./hive/pdb/1E8Xh.pdb -g ./hive/clefts/1E8X_ATP3000A-_sph_1.pdb -o ./hive/mifs/ -l ATP3000A -r 3 -t 1E8X
+./mif -p ./hive/pdb/1E8Xh.pdb -g ./hive/clefts/1E8X_ATP3000A-_sph_1.pdb -o ./hive/mifs/ -l ATP3000A- -r 3 -t 1E8X
 
-./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ -l ATP600E -r 3 -t 1RDQ
+./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB-_sph_2.pdb -o ./hive/mifs/ -l ATP600E- -r 3 -t 1RDQ
 
 To calculate the grid only for a specific grid resolution, add argument -z followed the resolution code:
 
