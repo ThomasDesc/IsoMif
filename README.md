@@ -33,12 +33,12 @@ To download the PDB for the example you may use the following links:
 
 https://files.rcsb.org/download/1RDQ.pdb
 
-https://files.rcsb.org/download/5OEI.pdb
+https://files.rcsb.org/download/1E8X.pdb
 
 
 To find the cavity in contact with a residue or HET group, add the argument '-a' followed by Residue Name - Residue number - Chain - Alternate location (or dash if none). For example:
 
-./getCleft -p ./hive/pdb/1E8X.pdb -o ./hive/clefts/1E8X -s -a ATP3000A-
+./Get_Cleft -p ./hive/pdb/1e8x.pdb -o ./hive/clefts/1E8X -s -a ATP3000A-
 
 This will create two files in the directory specified with -o :
 1E8X_ATP3000A-_sph_1.pdb (cavity volume represented by spheres)
@@ -48,7 +48,7 @@ These files are used as input in mif to define where the MIF interaction vectors
 
 You can calculate clefts of 1RDQ  with ATP 600 E alt. B:
 
-./getCleft -p ./hive/pdb/1RDQ.pdb -o ./hive/clefts/1RDQ -s -a ATP600EB
+./Get_Cleft -p ./hive/pdb/1rdq.pdb -o ./hive/clefts/1RDQ -s -a ATP600EB
 
 ##############################
 2. Add Hydrogens to Input PDBs
@@ -66,9 +66,9 @@ Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond
 
 Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X_ATP3000A-_sph_1.pdb). Argument -l allows you to constrain the grid around a ligand or residue up to a distance (in Angstrom) specified with -r. Argument -t is the prefix of the output file name.
 
-./mif -p ./hive/pdb/1E8Xh.pdb -g ./hive/clefts/1E8X_ATP3000A-_sph_1.pdb -o ./hive/mifs/ -s 1 -l ATP3000A- -t 1E8X
+./mif -p ./hive/pdb/1E8Xh.pdb -g ./hive/clefts/1E8X_ATP3000A-_sph_1.pdb -o ./hive/mifs/ -s 1 -l ATP3000A- -t 1E8X_m
 
-./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ -s 1 -l ATP600EB -t 1RDQ
+./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ -s 1 -l ATP600EB -t 1RDQ_m
 
 To calculate the grid only for a specific grid resolution, add argument -z followed the resolution code:
 
