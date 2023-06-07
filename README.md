@@ -35,9 +35,6 @@ https://files.rcsb.org/download/1RDQ.pdb
 
 https://files.rcsb.org/download/5OEI.pdb
 
-To find the top biggest 5 cavities of 1E8X.pdb:
-
-./getCleft -p ./hive/pdb/1E8X.pdb -o ./hive/clefts/1E8X -s -t 5
 
 To find the cavity in contact with a residue or HET group, add the argument '-a' followed by Residue Name - Residue number - Chain - Alternate location (or dash if none). For example:
 
