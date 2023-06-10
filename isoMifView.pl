@@ -156,7 +156,7 @@ open IN, "<".$matchIn or die "Cant open match file";
 while($line=<IN>){
   
   chomp($_);
-  if($line=~/^REMARK\s+mif_file_1:\s+([-_\.\/a-z0-9]+)/i){
+  if ($line =~ /^REMARK\s+mif_file_1:\s+(.+)/i) {
     $mifFilePath1=$1;
     $m1Path=$mifFilePath1 unless($m1Path ne "");
     if($mifFilePath1=~/\/([-_\.a-z0-9]+)$/i){
@@ -170,7 +170,7 @@ while($line=<IN>){
     }
   }
 
-  if($line=~/^REMARK\s+mif_file_2:\s+([-_\.\/a-z0-9]+)/i){
+  if ($line =~ /^REMARK\s+mif_file_1:\s+(.+)/i) {
     $mifFilePath2=$1;
     $m2Path=$mifFilePath2 unless($m2Path ne "");
     if($mifFilePath2=~/\/([-_\.a-z0-9]+)$/i){
