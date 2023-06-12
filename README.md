@@ -20,9 +20,9 @@ g++ ./isomif.cpp -o ./isomif -O3 -lm -lgsl -lgslcblas -L/path/to/gsl/lib/ -I/pat
 --- Binaries ---
 
 To use the binaries, open a terminal or console and change directory to the root directory where the download folder was unzipped:
-
+```
 cd /home/john/IsoMif
-
+```
 Then follow the instructions below:
 
 
@@ -41,6 +41,7 @@ https://files.rcsb.org/download/1E8X.pdb
 
 
 To find the cavity in contact with a residue or HET group, add the argument '-a' followed by Residue Name - Residue number - Chain - Alternate location (or dash if none). For example:
+
 ```
 ./Get_Cleft -p ./hive/pdb/1e8x.pdb -o ./hive/clefts/1E8X -s -a ATP3000A-
 ```
