@@ -114,9 +114,9 @@ Negative charge - magenta
 Give the two input MIF files as input with -p1 and -p2 and the output file with -o. With argument -c, you can define in which grid resolution (0=2.0, 1=1.5, 2=1.0 and 3=0.5) you want to find mif similarities. The MIF at this resolution must have been calculated (see argument -z of mif). You can set a distance threshold with -d (in Angstroms) to determine the geometric variability between nodes in the association graph.
 
 The example below will search mif similarities between the two query MIFs in the 1.5 Angstrom resolution grid:
-
+```
 ./isomif -p1 ./hive/mifs/1E8X.mif -p2 ./hive/mifs/1RDQ.mif -o ./hive/match/ -c 2 -l1 -l1 ATP3000A- -l2 ATP600EB
-
+```
 You can also superimpose the MIFs using a list of corresponding atoms ids with the argument -c set to -2. To superimpose the MIFs based on the ATP molecules of 1E8X and 1RDQ, use argument -q to provide two lists (seperated by ' ') of corresponding ATP atoms ids (sep. by ','): -q 6833,6834,6836,6830,6828,6822,6826,6819,6824,6811 2964,2965,2967,2961,2959,2953,2957,2950,2955,2942.
 
 ./isoMif -p1 ./hive/mifs/1E8X.mif -p2 ./hive/mifs/1RDQ.mif -o ./hive/match/ -c -2 -q 6833,6834,6836,6830,6828,6822,6826,6819,6824,6811 2964,2965,2967,2961,2959,2953,2957,2950,2955,2942
