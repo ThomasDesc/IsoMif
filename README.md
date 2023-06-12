@@ -26,7 +26,9 @@ cd /home/john/IsoMif
 Then follow the instructions below:
 
 ################
+
 1. Find Cavities
+
 ################
 
 To download the PDB for the example you may use the following links:
@@ -51,7 +53,9 @@ You can calculate clefts of 1RDQ  with ATP 600 E alt. B:
 ./Get_Cleft -p ./hive/pdb/1rdq.pdb -o ./hive/clefts/1RDQ -s -a ATP600EB
 
 ##############################
+
 2. Add Hydrogens to Input PDBs
+
 ##############################
 
 Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond) donors and correct the placement of terminal O/N atoms for asparagine and glutamine as well as C/N for histidine as these residues can often be erroneously modeled during refinement. Use the reduce program (https://github.com/rlabduke/reduce)
@@ -61,7 +65,9 @@ Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond
 ./reduce -FLIP ./hive/pdb/1rdq.pdb > ./hive/pdb/1RDQh.pdb
 
 ###################################################################
+
 3. Calculate Molecular Interaction Fields in Both Cavities with mif
+
 ###################################################################
 
 Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X_ATP3000A-_sph_1.pdb). Argument -l allows you to constrain the grid around a ligand or residue up to a distance (in Angstrom) specified with -r. Argument -t is the prefix of the output file name.
@@ -71,7 +77,9 @@ Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X
 ./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ -s 1 -l ATP600EB -t 1RDQ
 
 #################################################
+
 4. Generate the PyMol script to visualize the MIF
+
 #################################################
 
 This will create a .pml file that you can open with PyMol. It will show the grids at the specified resolution (if any). It will also show colored spheres that represent position of potential interactions found below the threshold. The colors are probe specific, see below.
@@ -88,7 +96,9 @@ Positive charge - green
 Negative charge - magenta
 
 #####################################
+
 5. Find MIF similarities using IsoMIF
+
 #####################################
 
 Give the two input MIF files as input with -p1 and -p2 and the output file with -o. With argument -c, you can define in which grid resolution (0=2.0, 1=1.5, 2=1.0 and 3=0.5) you want to find mif similarities. The MIF at this resolution must have been calculated (see argument -z of mif). You can set a distance threshold with -d (in Angstroms) to determine the geometric variability between nodes in the association graph.
@@ -114,7 +124,9 @@ The RMSD of a residue or bound molecule after the superimposition of the MIF sim
 ./isoMif -p1 ./hive/mifs/1E8X.mif -p2 ./hive/mifs/1RDQ.mif -o ./hive/match/ -c 1 -l 1 -l1 ATP3000A- -l2 ATP600E-
 
 ####################################################################
+
 6. Generate PyMol script to visualize the matched and unmatched MIFs
+
 ####################################################################
 
 perl ./isoMifView.pl -m ./hive/match/1E8X_match_1RDQ.isomif -o ./hive/matchView/ -g 2
