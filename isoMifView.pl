@@ -170,7 +170,7 @@ while($line=<IN>){
     }
   }
 
-  if ($line =~ /^REMARK\s+mif_file_1:\s+(.+)/i) {
+  if ($line =~ /^REMARK\s+mif_file_2:\s+(.+)/i) {
     $mifFilePath2=$1;
     $m2Path=$mifFilePath2 unless($m2Path ne "");
     if($mifFilePath2=~/\/([-_\.a-z0-9]+)$/i){
