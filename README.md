@@ -9,13 +9,13 @@ To run IsoMif locally on mac or linux, you need 3 programs (GetCleft, Mif and Is
 
 --- Compile Mif ---
 
-g++ /home/john/IsoMif/mif.cpp -o /home/john/IsoMif/mif -O3
+g++ ./mif.cpp -o ./mif -O3
 
 --- Compile IsoMIF ---
 
 Requires GSL installed and its library (-L) and include (-I) dirs specified like so:
 
-g++ /home/john/IsoMif/isomif.cpp -o /home/john/IsoMif/isomif -O3 -lm -lgsl -lgslcblas -L/path/to/gsl/lib/ -I/path/to/gsl/include/
+g++ ./isomif.cpp -o ./isomif -O3 -lm -lgsl -lgslcblas -L/path/to/gsl/lib/ -I/path/to/gsl/include/
 
 --- Binaries ---
 
