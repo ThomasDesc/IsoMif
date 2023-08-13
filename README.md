@@ -17,11 +17,17 @@ To run IsoMif locally on mac or linux, you need 3 programs (GetCleft, Mif and Is
 In order to follow the guide you will need to create all the necessary folders before running the commands. The folder structure should resemble this:
 
 ├───hive
+
     ├───clefts
+    
     ├───match
+    
     ├───matchView
+    
     ├───mifs
+    
     ├───mifView
+    
     └───pdb
     
 
