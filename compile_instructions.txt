@@ -3,13 +3,21 @@ To run IsoMif locally on mac or linux, you need 3 programs (GetCleft, Mif and Is
 --- Compile Mif ---
 
 g++ ./mif.cpp -o ./mif -O3
+
 --- Compile IsoMIF ---
 
 Requires GSL installed and its library (-L) and include (-I) dirs specified like so:
 
 g++ ./isomif.cpp -o ./isomif -O3 -lm -lgsl -lgslcblas -L/path/to/gsl/lib/ -I/path/to/gsl/include/
+
 --- Binaries ---
 
 To use the binaries, open a terminal or console and change directory to the root directory where the download folder was unzipped:
 
 cd /home/john/IsoMif
+
+--- Commands to run perl scripts ---
+
+perl ./mifView.pl -m ./hive/mifs/1E8X.mif -o ./hive/mifView/ perl ./mifView.pl -m ./hive/mifs/1RDQ.mif -o ./hive/mifView/
+
+perl ./isoMifView.pl -m ./hive/match/1E8X_match_1RDQ.isomif -o ./hive/matchView/ -g 1
