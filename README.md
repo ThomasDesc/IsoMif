@@ -77,10 +77,10 @@ Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X
 
 This will create a .pml file that you can open with PyMol. It will show the grids at the specified resolution (if any). It will also show colored spheres that represent position of potential interactions found below the threshold. The colors are probe specific, see below.
 ```
-perl ./mifView.pl -m ./hive/mifs/1E8X.mif -o ./hive/mifView/
+./mifView -m ./hive/mifs/1E8X.mif -o ./hive/mifView/
 ```
 ```
-perl ./mifView.pl -m ./hive/mifs/1RDQ.mif -o ./hive/mifView/
+./mifView -m ./hive/mifs/1RDQ.mif -o ./hive/mifView/
 ```
 hydrophobic - cyan
 aromatic - orange
@@ -127,6 +127,6 @@ The RMSD of a residue or bound molecule after the superimposition of the MIF sim
 ####################################################################
 
 ```
-perl ./isoMifView.pl -m ./hive/match/1E8X_match_1RDQ.isomif -o ./hive/matchView/ -g 2
+./isoMifView -m ./hive/match/1E8X_match_1RDQ.isomif -o ./hive/matchView/ -g 2
 ```
 Argument -g defines the grid resolution of the matched nodes to view. It corresponds to argument -c of isoMif. In this PyMol file, for a given probe, to distinguish if it represents the Mif of the first or of the second protein, we use two sphere sizes. The big spheres represent the first protein (here 1E8X, in green), the small spheres the second protein (1RDQ, in cyan). Semi-transparent spheres represent the initial Mif calculated in the cavity and opaque spheres represent the subset that was found similar. In the case of 1E8X and 1RDQ there are only a few semi-transparent spheres as the two proteins are highly similar.
