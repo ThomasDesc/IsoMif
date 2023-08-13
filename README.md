@@ -44,7 +44,8 @@ You can calculate clefts of 1RDQ  with ATP 600 E alt. B:
 ##############################
 
 
-Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond) donors and correct the placement of terminal O/N atoms for asparagine and glutamine as well as C/N for histidine as these residues can often be erroneously modeled during refinement. Use the reduce program (https://github.com/rlabduke/reduce)
+Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond) donors and correct the placement of terminal O/N atoms for asparagine and glutamine as well as C/N for histidine as these residues can often be erroneously modeled during refinement. Use the reduce program (https://github.com/rlabduke/reduce). This can also be done with a GUI by using PyMOL.
+
 ```
 ./reduce -FLIP ./hive/pdb/1ex8.pdb > ./hive/pdb/1E8Xh.pdb
 ```
