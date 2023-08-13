@@ -14,6 +14,7 @@ To run IsoMif locally on mac or linux, you need 3 programs (GetCleft, Mif and Is
 
 ################
 
+
 In order to follow the guide you will need to create all the necessary folders before running the commands. The folder structure should resemble this:
 
 ```
@@ -25,6 +26,7 @@ In order to follow the guide you will need to create all the necessary folders b
     ├───mifView
     └───pdb
 ```  
+
 
 ################
 
@@ -56,6 +58,7 @@ You can calculate clefts of 1RDQ  with ATP 600 E alt. B:
 ./Get_Cleft -p ./hive/pdb/1rdq.pdb -o ./hive/clefts/1RDQ -s -a ATP600EB
 ```
 
+
 ##############################
 
 3. Add Hydrogens to Input PDBs
@@ -72,6 +75,7 @@ Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond
 ./reduce -FLIP ./hive/pdb/1rdq.pdb > ./hive/pdb/1RDQh.pdb
 ```
 
+
 ###################################################################
 
 4. Calculate Molecular Interaction Fields in Both Cavities with mif
@@ -86,6 +90,7 @@ Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X
 ```
 ./mif -p ./hive/pdb/1RDQh.pdb -g ./hive/clefts/1RDQ_ATP600EB_sph_2.pdb -o ./hive/mifs/ -s 1 -l ATP600EB -t 1RDQ
 ```
+
 
 #################################################
 
@@ -139,11 +144,13 @@ The RMSD of a residue or bound molecule after the superimposition of the MIF sim
 ./isoMif -p1 ./hive/mifs/1E8X.mif -p2 ./hive/mifs/1RDQ.mif -o ./hive/match/ -c 1 -l 1 -l1 ATP3000A- -l2 ATP600E-
 ```
 
+
 ####################################################################
 
 7. Generate PyMol script to visualize the matched and unmatched MIFs
 
 ####################################################################
+
 
 ```
 ./isoMifView -m ./hive/match/1E8X_match_1RDQ.isomif -o ./hive/matchView/ -g 2
