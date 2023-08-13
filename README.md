@@ -7,9 +7,27 @@ Québec, Canada
 
 To run IsoMif locally on mac or linux, you need 3 programs (GetCleft, Mif and IsoMif). All included in the download. Use the binary files for your architecture. You can also compile the Mif and IsoMIF program on your machine.
 
+
 ################
 
-1. Find Cavities
+1.Folder Structure
+
+################
+
+In order to follow the guide you will need to create all the necessary folders before running the commands. The folder structure should resemble this:
+
+├───hive
+    ├───clefts
+    ├───match
+    ├───matchView
+    ├───mifs
+    ├───mifView
+    └───pdb
+    
+
+################
+
+2. Find Cavities
 
 ################
 
@@ -39,7 +57,7 @@ You can calculate clefts of 1RDQ  with ATP 600 E alt. B:
 
 ##############################
 
-2. Add Hydrogens to Input PDBs
+3. Add Hydrogens to Input PDBs
 
 ##############################
 
@@ -55,7 +73,7 @@ Hydrogen atoms are used to calculate the directionality of Hydrogen bond (H-bond
 
 ###################################################################
 
-3. Calculate Molecular Interaction Fields in Both Cavities with mif
+4. Calculate Molecular Interaction Fields in Both Cavities with mif
 
 ###################################################################
 
@@ -70,7 +88,7 @@ Use the pdb with hydrogens create by reduce (1E8Xh.pdb) and the cleft file (1E8X
 
 #################################################
 
-4. Generate the PyMol script to visualize the MIF
+5. Generate the PyMol script to visualize the MIF
 
 #################################################
 
@@ -92,7 +110,7 @@ Negative charge - magenta
 
 #####################################
 
-5. Find MIF similarities using IsoMIF
+6. Find MIF similarities using IsoMIF
 
 #####################################
 
@@ -122,7 +140,7 @@ The RMSD of a residue or bound molecule after the superimposition of the MIF sim
 
 ####################################################################
 
-6. Generate PyMol script to visualize the matched and unmatched MIFs
+7. Generate PyMol script to visualize the matched and unmatched MIFs
 
 ####################################################################
 
