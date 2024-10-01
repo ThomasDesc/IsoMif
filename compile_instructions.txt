@@ -8,7 +8,7 @@ g++ ./mif.cpp -o ./mif -O3
 
 Requires GSL installed and its library (-L) and include (-I) dirs specified like so:
 
-g++ ./isomif.cpp -o ./isomif -O3 -lm -lgsl -lgslcblas -L/path/to/gsl/lib/ -I/path/to/gsl/include/
+g++ ./isomif.cpp -o ./isomif -O3 -I/opt/homebrew/Cellar/gsl/2.8/include /opt/homebrew/Cellar/gsl/2.8/lib/libgsl.a /opt/homebrew/Cellar/gsl/2.8/lib/libgslcblas.a -lm
 
 --- Binaries ---
 
